@@ -1,0 +1,14 @@
+# Events:
+# ApplicationStop, BeforeInstall, AfterInstall, ApplicationStart, ValidateService
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/code-deploy-laravel
+hooks:
+  AfterInstall:
+    - location: ./devops/hooks/after-install.sh
+      runas: ubuntu
+
+#BeforeInstall
+#AfterInstall
